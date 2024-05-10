@@ -7,6 +7,8 @@ import AppLayout from "./pages/AppLayout";
 import PageNotFound from "./pages/PageNotFound";
 import Login from "./pages/Login";
 import CityList from "./components/CityList";
+import CountriesList from "./components/CountriesList";
+import City from "./components/City";
 
 const BASE_URL = "http://localhost:8000";
 
@@ -36,9 +38,21 @@ const App = (props) => {
       <Routes>
         <Route index element={<Homepage />} />
         <Route path="app" element={<AppLayout />}>
-          <Route index element= {<CityList cities={cities} loading={isLoading}/>} />
-          <Route path="cities" element={<CityList cities={cities} loading={isLoading}/>} />
-          <Route path="countries" element={<p>Countries</p>} />
+          <Route
+            index
+            element={<CityList cities={cities} loading={isLoading} />}
+          />
+          <Route
+            path="cities"
+            element={<CityList cities={cities} loading={isLoading} />}
+          />
+
+          <Route path="cities/:id" element={<City />} />
+
+          <Route
+            path="countries"
+            element={<CountriesList cities={cities} loading={isLoading} />}
+          />
           <Route path="form" element={<p>Form</p>} />
         </Route>
         <Route path="product" element={<Product />} />
