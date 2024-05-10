@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Sidebar.module.css";
 import Logo from "./Logo";
 import AppNav from "./AppNav";
+import { Outlet } from "react-router-dom";
 
 const Sidebar = (props) => {
   return (
@@ -9,11 +10,12 @@ const Sidebar = (props) => {
       <Logo />
       <AppNav />
 
-      <p>Lists of cities</p>
+      <Outlet />
 
       <footer className={styles.footer}>
         <p className={styles.copyright}>
-            &copy; Copyright {new Date().getFullYear()} by WorldWise Kamrul Hasan Inc.
+          &copy; Copyright {new Date().getFullYear()} by WorldWise Kamrul Hasan
+          Inc.
         </p>
       </footer>
     </div>
