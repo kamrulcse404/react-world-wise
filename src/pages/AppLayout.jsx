@@ -1,11 +1,15 @@
 import React from "react";
-import AppNav from "../components/AppNav";
+import Sidebar from "../components/Sidebar";
+import Map from "../components/Map";
+import styles from "./AppLayout.module.css";
 
 const AppLayout = (props) => {
-  return <div>
-    <AppNav />
-    <p>App</p>
-  </div>;
+  return (
+    <div className={styles.app}>
+      <Sidebar />
+      <Map /> 
+    </div>
+  );
 };
 
 export default AppLayout;
