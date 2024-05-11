@@ -36,4 +36,9 @@ function CitiesProvider({ children }) {
   );
 }
 
-export {CitiesProvider};
+function useCities() {
+  const context = useContext(CitiesContext);
+  return context;
+}
+
+export { CitiesProvider, useCities };
