@@ -33,7 +33,7 @@ const App = (props) => {
         </Routes>
       </BrowserRouter>
     </CitiesProvider>
-  );
+  ); 
 };
 
 export default App;
